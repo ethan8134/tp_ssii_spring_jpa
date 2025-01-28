@@ -11,16 +11,16 @@ import java.util.Set;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @ToString
-public class Personne {
+public class Projet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer matricule;
+    private Integer code;
 
     @NonNull
-    private String nom;
+    private String name;
 
-    @OneToMany(mappedBy = "personne", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "projet", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Participation> participations = new HashSet<>();
 
 }
